@@ -5,6 +5,7 @@ package ni_hello;
 
 import java.util.List;
 
+import org.openni.Device;
 import org.openni.DeviceInfo;
 import org.openni.OpenNI;
 
@@ -21,5 +22,10 @@ public class App {
             System.out.println("USB Vendor ID:" + d.getUsbVendorId());
             System.out.println("Vendor:" + d.getVendor());
         }
+
+        Device device = Device.open();
+
+        device.close();
+        OpenNI.shutdown();
     }
 }
